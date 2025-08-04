@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDash - Professional Productivity Suite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Focus Mode Toggle -->
+    <button id="focus-toggle" class="focus-toggle" aria-label="Toggle focus mode">
+        <span class="focus-icon">🎯</span>
+    </button>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+
+    <!-- Main Container -->
+    <div class="app-container" id="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h1>ProDash</h1>
+                <span class="version">v1.0</span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#todo" class="nav-link active" data-module="todo">
+                    <span class="nav-icon">✓</span>
+                    <span class="nav-text">Tasks</span>
+                </a></li>
+                <li><a href="#notes" class="nav-link" data-module="notes">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-text">Notes</span>
+                </a></li>
+                <li><a href="#calendar" class="nav-link" data-module="calendar">
+                    <span class="nav-icon">📅</span>
+                    <span class="nav-text">Calendar</span>
+                </a></li>
+                <li><a href="#pomodoro" class="nav-link" data-module="pomodoro">
+                    <span class="nav-icon">🍅</span>
+                    <span class="nav-text">Pomodoro</span>
+                </a></li>
+                <li><a href="#calculators" class="nav-link" data-module="calculators">
+                    <span class="nav-icon">🧮</span>
+                    <span class="nav-text">Calculators</span>
+                </a></li>
+                <li><a href="#games" class="nav-link" data-module="games">
+                    <span class="nav-icon">⚛️</span>
+                    <span class="nav-text">Physics Playground</span>
+                </a></li>
+                <li><a href="#sprite" class="nav-link" data-module="sprite">
+                    <span class="nav-icon">🎨</span>
+                    <span class="nav-text">Sprite Generator</span>
+                </a></li>
+                <li><a href="#settings" class="nav-link" data-module="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Settings</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <!-- Todo Module -->
+            <div class="module" id="todo-module">
+                <div class="module-header">
+                    <h2>Task Management</h2>
+                    <button class="btn btn-primary" id="add-task-btn">+ Add Task</button>
+                </div>
+                <div class="task-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <div class="task-list" id="task-list">
+                    <!-- Tasks will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <!-- Notes Module -->
+            <div class="module hidden" id="notes-module">
+                <div class="module-header">
+                    <h2>Notes</h2>
+                    <button class="btn btn-primary" id="add-note-btn">+ New Note</button>
+                </div>
+                <div class="notes-container">
+                    <div class="notes-sidebar">
+                        <div class="folder-list" id="folder-list">
+                            <!-- Folders will be loaded here -->
+                        </div>
+                        <div class="notes-list" id="notes-list">
+                            <!-- Notes will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="notes-editor">
+                        <div class="editor-tabs">
+                            <button class="tab-btn active" data-tab="write">Write</button>
+                            <button class="tab-btn" data-tab="preview">Preview</button>
+                        </div>
+                        <textarea id="note-editor" placeholder="Start writing your note..."></textarea>
+                        <div id="note-preview" class="note-preview hidden"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Module -->
+            <div class="module hidden" id="calendar-module">
+                <div class="module-header">
+                    <h2>Calendar & Planner</h2>
+                    <div class="calendar-controls">
+                        <button class="btn" id="prev-month">‹</button>
+                        <span id="current-month">August 2025</span>
+                        <button class="btn" id="next-month">›</button>
+                        <button class="btn btn-primary" id="add-event-btn">+ Event</button>
+                    </div>
+                </div>
+                <div class="calendar-view">
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Calendar will be rendered here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pomodoro Module -->
+            <div class="module hidden" id="pomodoro-module">
+                <div class="module-header">
+                    <h2>Pomodoro Timer</h2>
+                    <div class="timer-stats">
+                        <span>Sessions: <span id="session-count">0</span></span>
+                    </div>
+                </div>
+                <div class="pomodoro-container">
+                    <div class="timer-display">
+                        <div class="timer-circle">
+                            <span class="timer-time" id="timer-display">25:00</span>
+                            <span class="timer-label" id="timer-label">Focus Time</span>
+                        </div>
+                    </div>
+                    <div class="timer-controls">
+                        <button class="btn btn-primary" id="start-timer">Start</button>
+                        <button class="btn" id="pause-timer">Pause</button>
+                        <button class="btn" id="reset-timer">Reset</button>
+                    </div>
+                    <div class="timer-settings">
+                        <div class="setting-group">
+                            <label>Focus (min):</label>
+                            <input type="number" id="focus-duration" value="25" min="1" max="60">
+                        </div>
+                        <div class="setting-group">
+                            <label>Break (min):</label>
+                            <input type="number" id="break-duration" value="5" min="1" max="30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculators Module -->
+            <div class="module hidden" id="calculators-module">
+                <div class="module-header">
+                    <h2>Calculator Suite</h2>
+                </div>
+                <div class="calculator-tabs">
+                    <button class="calc-tab active" data-calc="basic">Basic</button>
+                    <button class="calc-tab" data-calc="scientific">Scientific</button>
+                    <button class="calc-tab" data-calc="financial">Financial</button>
+                    <button class="calc-tab" data-calc="converter">Converter</button>
+                    <button class="calc-tab" data-calc="graphing">Graphing</button>
+                </div>
+                <div class="calculator-content" id="calculator-content">
+                    <!-- Calculator interfaces will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Games Module -->
+            <div class="module hidden" id="games-module">
+                <div class="module-header">
+                    <h2>Games</h2>
+                </div>
+                <!-- Games content will be dynamically loaded here -->
+            </div>
+
+            <!-- Sprite Generator Module -->
+            <div class="module hidden" id="sprite-module">
+                <!-- Sprite Generator content will be dynamically loaded here -->
+            </div>
+
+            <!-- Settings Module -->
+            <div class="module hidden" id="settings-module">
+                <div class="module-header">
+                    <h2>Settings & Preferences</h2>
+                </div>
+                <!-- Settings content will be dynamically loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Task/Event Creation -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+🚀 Moonshot Prompt: Professional Multi-Tool Productivity & Calculators Dashboard
+✅ Prompt:
+
+“You are an expert senior front-end engineer tasked with creating the foundation for a sophisticated, professional-grade single-page productivity & utilities web application, written entirely in modern HTML, CSS, and vanilla JavaScript.
+
+This app should feel like a polished, all-in-one productivity OS that runs entirely in the browser with no build tools or frameworks. The code must be clean, modular, and well-commented. Use ES6 modules and semantic HTML5.
+
+Core modules and features:
+
+1️⃣ Advanced To-Do List
+
+Add/edit/delete tasks.
+
+Nested subtasks.
+
+Deadlines & reminders (optional).
+
+LocalStorage persistence.
+
+2️⃣ Rich Notes App
+
+Supports plain text & markdown with live preview.
+
+Organize notes into folders.
+
+Auto-save to LocalStorage.
+
+3️⃣ Flexible Calendar & Planner
+
+Monthly & weekly views.
+
+Create/edit/delete/reschedule events.
+
+Drag & drop for moving events.
+
+4️⃣ Pomodoro Timer
+
+Configurable session/break lengths.
+
+Audio & desktop notification.
+
+Session history stats.
+
+5️⃣ 📐 Multi-Calculator Suite — One section with tabs for:
+
+Basic Calculator: Add/subtract/multiply/divide.
+
+Scientific Calculator: Trig, logs, exponents, roots.
+
+Financial Calculator: Loan payment estimator, interest calculator, mortgage breakdown.
+
+Unit Converter: Length, weight, temperature, currency (static or dummy for now).
+
+Graphing Calculator: Simple 2D plot of user-defined functions.
+
+6️⃣ 🌍 Location & Weather Panel
+
+Detect user’s location using the browser Geolocation API.
+
+Display city, region, and coordinates.
+
+Use a free weather API (mock the fetch call if needed) to show current weather and a 7-day forecast.
+
+Display temperature, condition icon, and daily highs/lows.
+
+7️⃣ Focus Mode
+
+Distraction-free toggle to hide sidebars and maximize active module.
+
+📌 Technical Requirements:
+
+Pure HTML5, CSS (Flexbox/Grid, CSS variables, responsive).
+
+Vanilla JavaScript ES6+ only.
+
+SPA structure with client-side routing for switching between modules.
+
+Reusable UI components (tabs, modals, nav, buttons).
+
+Store user data locally in LocalStorage.
+
+Well-structured file layout:
+
+bash
+Copy
+Edit
+/index.html  
+/styles.css  
+/app.js  
+/modules/todo.js  
+/modules/notes.js  
+/modules/calendar.js  
+/modules/pomodoro.js  
+/modules/calculators.js  
+/modules/locationWeather.js  
+/modules/router.js
+📐 Design Requirements:
+
+Ridiculously professional & modern UI.
+
+Use a sleek dark/light theme toggle (CSS variables).
+
+Sidebar or top navbar for navigation.
+
+Flexbox/Grid for responsive layout.
+
+Smooth transitions between views.
+
+💡 Additional:
+
+Include clear TODO: comments for any pieces that would normally require live API keys (e.g., weather API).
+
+Comment your code thoroughly.
+
+Output the full contents of each file in separate, properly formatted code blocks.
+
+Make the core structure fully functional — stub/mock any data that needs external calls.
+
+You may simplify repetitive details (like UI styling) to stay concise, but deliver a clear, working starter MVP with all modules wired up. The goal is to generate an advanced template I can refine later.
+
+Don’t use any external libraries, build tools, or frameworks — only plain HTML, CSS, JS.
+
+Be ambitious!
